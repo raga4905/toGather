@@ -5,6 +5,7 @@ import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
 import NavBar from '../../components/NavBar/NavBar';
+
 class App extends Component {
   constructor() {
     super();
@@ -12,11 +13,13 @@ class App extends Component {
       user: userService.getUser()
     };
   }
+
   /*--- Callback Methods ---*/
   handleLogout = () => {
     userService.logout();
     this.setState({ user: null })
   }
+
   handleSignupOrLogin = () => {
     this.setState({ user: userService.getUser() })
   }
