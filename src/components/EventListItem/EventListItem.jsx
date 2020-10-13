@@ -7,6 +7,7 @@ function EventListItem(props) {
         <div >
                 <h2 >{props.event.name}</h2>
                 <h5> {props.event.location}</h5>
+                <h6>{props.event.date}</h6>
         </div>
     );
 }
