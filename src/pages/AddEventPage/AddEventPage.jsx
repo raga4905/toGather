@@ -5,7 +5,7 @@ class AddEventPage extends Component {
         invalidForm: true, 
         formData: {
             name: '',
-            img: '', 
+            img: 'https://source.unsplash.com/random', 
             description: '',
             date: '', 
             location: ''
@@ -39,15 +39,6 @@ class AddEventPage extends Component {
                             value={this.state.formData.name}
                             onChange={this.handleChange}
                             required
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>Cover image URL</label>
-                        <input
-                            className="form-control"
-                            name="img"
-                            value={this.state.formData.img}
-                            onChange={this.handleChange}
                         />
                     </div>
                     <div className="form-group">

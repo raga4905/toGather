@@ -6,9 +6,6 @@ const eventScehma = new Schema({
         type: String,
         required: true
     },
-    img: {
-        type: String
-    },
     date: {
         type: Date
     },

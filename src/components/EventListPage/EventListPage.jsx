@@ -46,7 +46,9 @@ function EventListPage(props) {
                 <h1>Happening soon</h1>
                 <div>
                     {props.events.map(event => (
-                        <EventListItem event={event} key={event._id} />
+                        <EventListItem 
+                        event={event} key={event._id} 
+                        handleDeleteEvent={props.handleDeleteEvent}/>
                     ))}
                 </div>
             </>
