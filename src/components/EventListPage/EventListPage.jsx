@@ -43,13 +43,19 @@ function EventListPage(props) {
     let events = props.user ?
         <div>
             <>
+            <br/><br/>
                 <h1>Happening soon</h1>
-                <div>
-                    {props.events.map(event => (
+                <div className="container-fluid d-flex justify-content-center">
+                    <div className="row">
+                            {props.events.map(event => (
                         <EventListItem 
-                        event={event} key={event._id} 
-                        handleDeleteEvent={props.handleDeleteEvent}/>
-                    ))}
+                                    event={event} 
+                                    key={event._id} 
+                                    handleDisplayEvent={props.handleDisplayEvent}
+                        // handleDeleteEvent={props.handleDeleteEvent}
+                                /> 
+                            ))} 
+                    </div>
                 </div>
             </>
         </div>

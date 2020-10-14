@@ -6,8 +6,11 @@ function MyEventPage(props) {
     return (
         <>
             <div >
-                {props.myEvents.map(myEvents => (
-                    <MyEventItem myEvents={myEvents} key={myEvents._id} handleDeleteEvent={props.handleDeleteEvent}/>
+                {props.myEvents.map(myEvent => (
+                    <MyEventItem 
+                    myEvent={myEvent} 
+                    key={myEvent._id} 
+                    handleDeleteEvent={props.handleDeleteEvent}/>
                 ))}
             </div>
         </>

@@ -4,20 +4,22 @@ import './EventListItem.css';
 
 function EventListItem(props) {
     return (
-        <div >
-                <h2 >{props.event.name}</h2>
-                <img src="https://source.unsplash.com/collection/190727/100x100" alt="eventimg"/>
-                <h5> {props.event.location}</h5>
-                <h6>{props.event.date}</h6>
-            <Link
-                to={{
-                    pathname: '/details',
-                    state: { event: props.event }
-                }}>
-                DETAILS </Link>
-                <button onClick={() => props.handleDeleteEvent(props.event._id)}>
-                    DELETE
-                </button>
+        <div className="card text-center shadow">
+            <div className="overflow">
+                <img src="https://source.unsplash.com/collection/190727/autox400" alt="eventimg" className="card-img-top" />
+            </div>
+            <div className="card-body text-dark">
+                <h2 className="card-title">{props.event.name}</h2>
+                <p className="card-text text-secondary">{props.event.location}</p>
+                <p className="card-text text-secondary">{props.event.date}</p>
+                <Link className="btn btn-outline-success"
+                    to={{
+                        pathname: '/details',
+                        state: { event: props.event }
+                    }}>
+                    DETAILS </Link>
+                    {/* <button onClick={ () => props.handleDisplayEvent(props.event)}></button> */}
+            </div>
         </div>
     );
 }

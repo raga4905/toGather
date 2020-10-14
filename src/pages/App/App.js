@@ -9,7 +9,8 @@ import * as eventAPI from "../../services/events-api";
 import EventListPage from "../../components/EventListPage/EventListPage"; 
 import AddEventPage from "../AddEventPage/AddEventPage";
 import EventDetailPage from "../../components/EventDetailPage/EventDetailPage";
-import MyEventsPage from "../../components/MyEventsPage/MyEventsPage"
+import MyEventsPage from "../../components/MyEventsPage/MyEventsPage";
+import EditEventPage from "../../components/EditEventPage/EditEventPage"
 
 class App extends Component {
   constructor() {
@@ -18,7 +19,8 @@ class App extends Component {
       user: userService.getUser(), 
       events: [], 
       host: "",
-      myEvents: []
+      myEvents: [], 
+      // displayEvent: {}
     };
   }
 
@@ -34,6 +36,16 @@ class App extends Component {
     console.log(events)
   }
 
+  async componentDidUpdate(prevProps, prevState) {
+    if (prevState.user !== this.state.user) {
+      const events = await eventAPI.getAll();
+      const myEvents = await eventAPI.getMyEvents();
+      this.setState({
+        events: events,
+        myEvents: myEvents 
+      });
+    }
+  }
   
 
   /*--- Callback Methods ---*/
@@ -63,6 +75,25 @@ class App extends Component {
     }),
     () => this.props.history.push(''))
   }
+
+  handleUpdateEvent = async updatedEvtData => {
+    const updatedEvent = await eventAPI.update(updatedEvtData);
+    // Using map to replace just the puppy that was updated
+    const newEventsArray = this.state.events.map(e =>
+      e._id === updatedEvent._id ? updatedEvent : e
+    );
+    this.setState(
+      { events: newEventsArray },
+      // This cb function runs after state is updated
+      () => this.props.history.push('/')
+    );
+  }
+
+  // handleDisplayEvent = event => {
+  //   this.setState(
+  //     { displayEvent: event }
+  //   )
+  // }
 
   /*--- Lifecycle Methods ---*/
   render() {
@@ -94,15 +125,29 @@ class App extends Component {
             <EventDetailPage location={location} />
           } />
           <Route exact path='/myevents' render={({ location }) =>
-            <MyEventsPage location={location} myEvents={this.state.myEvents} handleDeleteEvent={this.handleDeleteEvent}/>
+            <MyEventsPage 
+            location={location} 
+            myEvents={this.state.myEvents} 
+            handleDeleteEvent={this.handleDeleteEvent}
+            />
+          } />
+          <Route exact path='/edit' render={({ location }) =>
+            <EditEventPage
+              handleUpdateEvent={this.handleUpdateEvent}
+              location={location}
+            />
           } />
         </Switch>
         <main>
             <EventListPage
               events={this.state.events}
               user={this.state.user}
-              handleDeleteEvent={this.handleDeleteEvent}
+              // handleDisplayEvent={this.handleDisplayEvent}
+
             />
+            {/* <EventDetailPage 
+            displayEvent={this.state.displayEvent}
+            /> */}
         </main>
       </div>
     );

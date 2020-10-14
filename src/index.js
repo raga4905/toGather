@@ -5,6 +5,9 @@ import './index.css';
 import App from './pages/App/App';
 import * as serviceWorker from './serviceWorker';
 
+//added this v
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
 ReactDOM.render(
   <Router>
     <Route render={({ history }) => <App history={history} />} />

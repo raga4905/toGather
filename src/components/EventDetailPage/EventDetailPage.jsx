@@ -9,8 +9,10 @@ function EventDetailPage(props) {
             <EventCard
                 key={event._id}
                 event={event}
+            
             />
         </>
     );
 }
+
 export default EventDetailPage;

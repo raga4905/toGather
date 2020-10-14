@@ -17,6 +17,7 @@ export function getMyEvents() {
     }).then(res => res.json());
 }
 
+
 export function create(evt) {
     return fetch(BASE_URL, {
         method: 'POST',
