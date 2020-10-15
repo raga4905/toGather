@@ -143,6 +143,7 @@ class App extends Component {
             displayEvent={this.state.displayEvent}
             /> */}
           <Switch>
+
             <Route exact path='/signup' render={({ history }) =>
               <SignupPage
                 history={history}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './EventListItem.css';
-import { ThemeProvider } from 'react-bootstrap';
+// import { ThemeProvider } from 'react-bootstrap';
 
 function EventListItem(props) {
     return (
