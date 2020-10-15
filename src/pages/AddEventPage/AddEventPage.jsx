@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from 'react-router-dom';
 
 class AddEventPage extends Component {
     state = {
@@ -76,8 +77,9 @@ class AddEventPage extends Component {
                         disabled={this.state.invalidForm}
                     >
                         ADD EVENT
-         </button>
+         </button> <Link to='/'>CANCEL</Link>
                 </form>
+
             </>
         );
     }

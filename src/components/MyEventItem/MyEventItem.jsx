@@ -35,9 +35,9 @@ function MyEventItem(props) {
             <h5> {props.myEvent.location}</h5>
             <h6>{props.myEvent.date}</h6> */}
             
-            <div >
+            {/* <div >
                 <Link to='/'>RETURN TO LIST</Link>
-            </div>
+            </div> */}
         </div>
     );
 }

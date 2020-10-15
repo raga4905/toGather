@@ -13,6 +13,9 @@ const NavBar = (props) => {
             &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
             <Link to='/myevents' className='NavBar-link'>My Events</Link>
             &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+             <form className="SearchBar">
+                <input type="text" placeholder="SEARCH" />
+            </form>
         </div>
         :
         <div>

@@ -10,8 +10,10 @@ module.exports = {
 };
 
 async function index(req, res) {
-    const events = await Event.find({});
-    res.status(200).json(events);
+    const events = await Event.find({}).populate('user').exec(function(err, events) {
+        res.status(200).json(events);
+    });
+    
 }
 
 async function userIndex(req, res) {

@@ -17,6 +17,7 @@ class App extends Component {
     super();
     this.state = {
       user: userService.getUser(), 
+      // name: "",
       events: [], 
       host: "",
       myEvents: [], 
@@ -126,6 +127,7 @@ class App extends Component {
         <main>
             <EventListPage
               events={this.state.events}
+              
               user={this.state.user}
               // handleDisplayEvent={this.handleDisplayEvent}
             />

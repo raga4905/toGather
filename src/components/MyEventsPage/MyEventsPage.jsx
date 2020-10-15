@@ -1,5 +1,6 @@
 import React from "react";
 import MyEventItem from "../MyEventItem/MyEventItem";
+import { Link } from 'react-router-dom';
 
 
 function MyEventPage(props) {
@@ -13,6 +14,9 @@ function MyEventPage(props) {
                     key={myEvent._id} 
                     handleDeleteEvent={props.handleDeleteEvent}/>
                 ))}
+                <div >
+                    <Link to='/'>RETURN TO LIST</Link>
+                </div>
             </div>
         </div>
     );
