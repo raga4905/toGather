@@ -12,6 +12,7 @@ function EventListItem(props) {
                 <h2 className="card-title">{props.event.name}</h2>
                 <p className="card-text text-secondary">{props.event.location}</p>
                 <p className="card-text text-secondary">{props.event.date}</p>
+                <p className="card-text text-secondary">{props.user.name}</p>
                 <Link className="btn btn-outline-success"
                     to={{
                         pathname: '/details',

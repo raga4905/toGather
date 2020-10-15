@@ -52,6 +52,7 @@ function EventListPage(props) {
                                     event={event} 
                                     key={event._id} 
                                     handleDisplayEvent={props.handleDisplayEvent}
+                                    user={props.user.name}
                         // handleDeleteEvent={props.handleDeleteEvent}
                                 /> 
                             ))} 

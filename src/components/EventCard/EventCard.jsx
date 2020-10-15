@@ -9,11 +9,9 @@ function EventCard({ event }) {
             </div>
             <div className='panel-body'>
                 <dl>
-                    {event.img}
+                    <img src="https://source.unsplash.com/collection/190727/100x100" alt="myEventsimg" />
                     <dt>Description</dt>
                     <dd>{event.description}</dd>
-                    <dt>Name</dt>
-                    <dd>{event.name}</dd>
                 </dl>
             </div>
             <div className='panel-footer'>
