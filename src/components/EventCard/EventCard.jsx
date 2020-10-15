@@ -13,10 +13,11 @@ function EventCard({ event }) {
                     <dt>Description</dt>
                     <dd>{event.description}</dd>
                 </dl>
+                <button className="btn btn-outline-success">Sign Up </button>
             </div>
-            <div className='panel-footer'>
+            {/* <div className='panel-footer'>
                 <Link to='/'>RETURN TO LIST</Link>
-            </div>
+            </div> */}
         </div>
     );
 }

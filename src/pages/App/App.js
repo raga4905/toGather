@@ -8,9 +8,10 @@ import NavBar from '../../components/NavBar/NavBar';
 import * as eventAPI from "../../services/events-api";
 import EventListPage from "../../components/EventListPage/EventListPage";
 import AddEventPage from "../AddEventPage/AddEventPage";
-import EventDetailPage from "../../components/EventDetailPage/EventDetailPage";
+// import EventDetailPage from "../../components/EventDetailPage/EventDetailPage";
 import MyEventsPage from "../../components/MyEventsPage/MyEventsPage";
-import EditEventPage from "../../components/EditEventPage/EditEventPage"
+import EditEventPage from "../../components/EditEventPage/EditEventPage";
+// import Modal from 'react-modal'
 
 class App extends Component {
   constructor() {
@@ -89,19 +90,8 @@ class App extends Component {
     );
   }
 
-  // handleDisplayEvent = event => {
-  //   this.setState(
-  //     { displayEvent: event }
-  //   )
-  // }
 
-  // displayEvent = () => {
-  //   const { show } = this.state;
-  //   this.setState({
-  //     show : !show
-  //   })
-  // }
-
+  
   render() {
     return (
       <div>
@@ -132,16 +122,10 @@ class App extends Component {
         <main>
           <EventListPage
             events={this.state.events}
-            // added below for toggle
-            // details={this.state.show }
-            // added above for toggle 
-
             user={this.state.user}
-          // handleDisplayEvent={this.handleDisplayEvent}
           />
-          {/* <EventDetailPage 
-            displayEvent={this.state.displayEvent}
-            /> */}
+          
+          
           <Switch>
 
             <Route exact path='/signup' render={({ history }) =>
@@ -156,9 +140,10 @@ class App extends Component {
                 handleSignupOrLogin={this.handleSignupOrLogin}
               />
             } />
-            {this.state.show ? <Route exact path='/details' render={({ location }) =>
+              {/* <Route exact path='/details' render={({ location }) =>
               <EventDetailPage location={location} />
-            } /> : null}
+            } /> */}
+            
           </Switch>
         </main>
       </div>
