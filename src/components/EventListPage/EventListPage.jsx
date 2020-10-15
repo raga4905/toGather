@@ -51,7 +51,7 @@ function EventListPage(props) {
                         <EventListItem 
                                     event={event} 
                                     key={event._id} 
-                                    handleDisplayEvent={props.handleDisplayEvent}
+                                    // details={props.show}
                                     user={props.user}
                         // handleDeleteEvent={props.handleDeleteEvent}
                                 /> 

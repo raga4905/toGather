@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './EventListItem.css';
+import { ThemeProvider } from 'react-bootstrap';
 
 function EventListItem(props) {
     return (
@@ -13,6 +14,9 @@ function EventListItem(props) {
                 <p className="card-text text-secondary">{props.event.location}</p>
                 <p className="card-text text-secondary">{props.event.date}</p>
                 <p className="card-text text-secondary">{props.event.user.name}</p>
+                {/* added below */}
+                {/* <button onClick={ThemeProvider.displayEvent}></button> */}
+                {/* added above */}
                 <Link className="btn btn-outline-success"
                     to={{
                         pathname: '/details',

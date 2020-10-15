@@ -6,7 +6,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
 import NavBar from '../../components/NavBar/NavBar';
 import * as eventAPI from "../../services/events-api";
-import EventListPage from "../../components/EventListPage/EventListPage"; 
+import EventListPage from "../../components/EventListPage/EventListPage";
 import AddEventPage from "../AddEventPage/AddEventPage";
 import EventDetailPage from "../../components/EventDetailPage/EventDetailPage";
 import MyEventsPage from "../../components/MyEventsPage/MyEventsPage";
@@ -16,11 +16,14 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      user: userService.getUser(), 
+      user: userService.getUser(),
       // name: "",
-      events: [], 
+      events: [],
       host: "",
-      myEvents: [], 
+      myEvents: [],
+      // added below for toggle
+      show: true
+      // added above for toggle 
       // displayEvent: {}
     };
   }
@@ -30,9 +33,9 @@ class App extends Component {
     console.log("HI THERE", events)
     const myEvents = await eventAPI.getMyEvents();
     console.log("BOO", myEvents)
-    this.setState({ 
-      events: events, 
-      myEvents: myEvents   
+    this.setState({
+      events: events,
+      myEvents: myEvents
     });
     console.log(events)
   }
@@ -43,13 +46,11 @@ class App extends Component {
       const myEvents = await eventAPI.getMyEvents();
       this.setState({
         events: events,
-        myEvents: myEvents 
+        myEvents: myEvents
       });
     }
   }
-  
 
-  /*--- Callback Methods ---*/
   handleLogout = () => {
     userService.logout();
     this.setState({ user: null })
@@ -64,28 +65,26 @@ class App extends Component {
     this.setState(state => ({
       events: [...state.events, newEvent],
       myEvents: [...state.myEvents, newEvent]
-    }), 
-    () => this.props.history.push(''))
+    }),
+      () => this.props.history.push(''))
   }
 
-  handleDeleteEvent= async id => {
+  handleDeleteEvent = async id => {
     await eventAPI.deleteOne(id);
     this.setState(state => ({
-      events: state.events.filter(e => e._id !== id), 
+      events: state.events.filter(e => e._id !== id),
       myEvents: []
     }),
-    () => this.props.history.push(''))
+      () => this.props.history.push(''))
   }
 
   handleUpdateEvent = async updatedEvtData => {
     const updatedEvent = await eventAPI.update(updatedEvtData);
-    // Using map to replace just the puppy that was updated
     const newEventsArray = this.state.events.map(e =>
       e._id === updatedEvent._id ? updatedEvent : e
     );
     this.setState(
       { events: newEventsArray },
-      // This cb function runs after state is updated
       () => this.props.history.push('/')
     );
   }
@@ -96,7 +95,13 @@ class App extends Component {
   //   )
   // }
 
-  /*--- Lifecycle Methods ---*/
+  // displayEvent = () => {
+  //   const { show } = this.state;
+  //   this.setState({
+  //     show : !show
+  //   })
+  // }
+
   render() {
     return (
       <div>
@@ -125,21 +130,19 @@ class App extends Component {
           } />
         </Switch>
         <main>
-            <EventListPage
-              events={this.state.events}
-              
-              user={this.state.user}
-              // handleDisplayEvent={this.handleDisplayEvent}
-            />
-            {/* <EventDetailPage 
+          <EventListPage
+            events={this.state.events}
+            // added below for toggle
+            // details={this.state.show }
+            // added above for toggle 
+
+            user={this.state.user}
+          // handleDisplayEvent={this.handleDisplayEvent}
+          />
+          {/* <EventDetailPage 
             displayEvent={this.state.displayEvent}
             /> */}
           <Switch>
-            {/* <Route exact path='/add' render={({ location }) =>
-              <AddEventPage
-                handleAddEvent={this.handleAddEvent} location={location}
-              />
-            } /> */}
             <Route exact path='/signup' render={({ history }) =>
               <SignupPage
                 history={history}
@@ -152,22 +155,9 @@ class App extends Component {
                 handleSignupOrLogin={this.handleSignupOrLogin}
               />
             } />
-            <Route exact path='/details' render={({ location }) =>
+            {this.state.show ? <Route exact path='/details' render={({ location }) =>
               <EventDetailPage location={location} />
-            } />
-            {/* <Route exact path='/myevents' render={({ location }) =>
-              <MyEventsPage
-                location={location}
-                myEvents={this.state.myEvents}
-                handleDeleteEvent={this.handleDeleteEvent}
-              />
-            } /> */}
-            {/* <Route exact path='/edit' render={({ location }) =>
-              <EditEventPage
-                handleUpdateEvent={this.handleUpdateEvent}
-                location={location}
-              />
-            } /> */}
+            } /> : null}
           </Switch>
         </main>
       </div>
