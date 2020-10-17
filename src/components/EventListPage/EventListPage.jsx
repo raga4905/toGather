@@ -6,12 +6,11 @@ import EventDetailPage from "../EventDetailPage/EventDetailPage";
 
 Modal.setAppElement('#root')
 function EventListPage(props) {
-    // const [modalIsOpen, setModalIsOpen] = useState(false)
     let events = props.user ?
         <div>
             <>
                 <br /><br />
-                <h1>Happening soon</h1>
+                <h1 className="text-center">Happening soon</h1>
                 <div className="container-fluid d-flex justify-content-center">
                     <div className="row">
                         {props.events.map(event => (
@@ -19,44 +18,20 @@ function EventListPage(props) {
                                 event={event}
                                 key={event._id}
                                 user={props.user}
-                                // open={setModalIsOpen}
                             />
                         ))}
-                        {/* <EventDetailPage/>  */}
-
-
-
                     </div>
                 </div>
             </>
         </div>
         :
         <div>
-            No User Logged In
+            <div>Sign in! Look how cool:</div>
+            
     </div>
     return (
         <>
             <div>{events}</div>
-            {/* <button onClick={() => setModalIsOpen(true)}>Details</button> */}
-            {/* <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} style={
-                {
-                    overlay: {
-                        backgroundColor: 'grey'
-                    }, 
-                    content: {
-                        color: "orange"
-                    }
-                }
-            }>
-                <EventDetailPage
-                
-                // // location={location}
-                // event={this.state.events}
-                />
-                <div>
-                    <button className="btn btn-outline-success" onClick={() => setModalIsOpen(false)}>Close</button>
-                </div>
-            </Modal> */}
         </>
 
 

@@ -1,28 +1,28 @@
 import React, { Component } from "react";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class AddEventPage extends Component {
     state = {
-        invalidForm: true, 
+        invalidForm: true,
         formData: {
             name: '',
-            img: 'https://source.unsplash.com/random', 
+            img: 'https://source.unsplash.com/random',
             description: '',
-            date: '', 
+            date: '',
             location: ''
         }
     }
-    formRef = React.createRef(); 
+    formRef = React.createRef();
 
     handleSubmit = e => {
-        e.preventDefault(); 
+        e.preventDefault();
         this.props.handleAddEvent(this.state.formData);
     };
 
     handleChange = e => {
-        const formData = {...this.state.formData, [e.target.name]: e.target.value}; 
+        const formData = { ...this.state.formData, [e.target.name]: e.target.value };
         this.setState({
-            formData, 
+            formData,
             invalidForm: !this.formRef.current.checkValidity()
         })
     }
@@ -51,6 +51,15 @@ class AddEventPage extends Component {
                             onChange={this.handleChange}
                             required
                         />
+                    </div>
+                    <div>
+                        <label >Image Link</label>
+                        <input
+                            className="form-control"
+                            type="text"
+                            name="img"
+                            value={this.state.formData.img}
+                            onChange={this.handleChange} />
                     </div>
                     <div className="form-group">
                         <label>Event's Date</label>
@@ -84,6 +93,6 @@ class AddEventPage extends Component {
         );
     }
 
-} 
+}
 
 export default AddEventPage; 

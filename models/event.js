@@ -6,6 +6,10 @@ const eventScehma = new Schema({
         type: String,
         required: true
     },
+    img: {
+        type: String,
+        default: 'https://source.unsplash.com/random'
+    },
     date: {
         type: Date
     },

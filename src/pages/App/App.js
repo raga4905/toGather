@@ -8,10 +8,8 @@ import NavBar from '../../components/NavBar/NavBar';
 import * as eventAPI from "../../services/events-api";
 import EventListPage from "../../components/EventListPage/EventListPage";
 import AddEventPage from "../AddEventPage/AddEventPage";
-// import EventDetailPage from "../../components/EventDetailPage/EventDetailPage";
 import MyEventsPage from "../../components/MyEventsPage/MyEventsPage";
 import EditEventPage from "../../components/EditEventPage/EditEventPage";
-// import Modal from 'react-modal'
 
 class App extends Component {
   constructor() {
@@ -139,11 +137,7 @@ class App extends Component {
                 history={history}
                 handleSignupOrLogin={this.handleSignupOrLogin}
               />
-            } />
-              {/* <Route exact path='/details' render={({ location }) =>
-              <EventDetailPage location={location} />
-            } /> */}
-            
+            } />            
           </Switch>
         </main>
       </div>

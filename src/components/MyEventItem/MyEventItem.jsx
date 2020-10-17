@@ -14,10 +14,10 @@ function MyEventItem(props) {
                     <h2 className="card-title">{props.myEvent.name}</h2>
                     <p className="card-text text-secondary">{props.myEvent.location}</p>
                     <p className="card-text text-secondary">{props.myEvent.date}</p>
-                    {/* <p className="card-text text-secondary">{props.user.name}</p> */}
-                    <button onClick={() => props.handleDeleteEvent(props.myEvent._id)}>
+                    <button className="btn btn-outline-warning" onClick={() => props.handleDeleteEvent(props.myEvent._id)}>
                         DELETE
-                </button>
+                </button> 
+                &nbsp;&nbsp;
                     <Link
                         className='btn btn-xs btn-warning'
                         to={{
@@ -29,15 +29,6 @@ function MyEventItem(props) {
             </Link>
                 </div>
             </div>
-
-            {/* <h2 >{props.myEvent.name}</h2>
-            <img src="https://source.unsplash.com/collection/190727/100x100" alt="myEventsimg" />
-            <h5> {props.myEvent.location}</h5>
-            <h6>{props.myEvent.date}</h6> */}
-            
-            {/* <div >
-                <Link to='/'>RETURN TO LIST</Link>
-            </div> */}
         </div>
     );
 }
