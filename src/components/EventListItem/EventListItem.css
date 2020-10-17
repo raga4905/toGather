@@ -1,6 +1,6 @@
 
 
-.card{
+/* .card{
     width: 20rem;
     margin: 2rem;
 }
@@ -9,13 +9,8 @@
     box-shadow: 5px 10px 20px 1px rgba(255, 254, 254, 0.253) !important;
 }
 
-/* .card-body{
-    padding: 3rem 0 !important;
-} */
-
 .card-text{
     font-size: .9rem;
-    /* padding: 0.4rem 1.9rem; */
 }
 
 .container-fluid.row{
@@ -33,4 +28,20 @@
 
 .card-img-top{
     transform: scale(1.8);
+} */
+
+#grid li .hexagon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 7px;
+    background-image: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');
+    -o-transform: skewY(-30deg) rotate(60deg);
+    -moz-transform: skewY(-30deg) rotate(60deg);
+    -webkit-transform: skewY(-30deg) rotate(60deg);
+    -ms-transform: skewY(-30deg) rotate(60deg);
+    transform: skewY(-30deg) rotate(60deg);
+    overflow: hidden;
 }

@@ -72,9 +72,9 @@ class App extends Component {
     await eventAPI.deleteOne(id);
     this.setState(state => ({
       events: state.events.filter(e => e._id !== id),
-      myEvents: []
+      myEvents: state.myEvents.filter(e => e._id !== id)
     }),
-      () => this.props.history.push(''))
+      () => this.props.history.push('/myevents'))
   }
 
   handleUpdateEvent = async updatedEvtData => {
@@ -122,7 +122,6 @@ class App extends Component {
             events={this.state.events}
             user={this.state.user}
           />
-          
           
           <Switch>
 
