@@ -82,7 +82,7 @@ class AddEventPage extends Component {
                     </div>
                     <button
                         type="submit"
-                        className="btn"
+                        className="btn btn-warning"
                         disabled={this.state.invalidForm}
                     >
                         ADD EVENT
