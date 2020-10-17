@@ -1,9 +1,13 @@
+body{
+    background-image: url('https://images.unsplash.com/photo-1496024840928-4c417adf211d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+}
+
 
 #grid {
     position: relative;
-    width: 60%;
+    width: 90%;
     margin: 0 auto;
-    padding: 0; /* Clears unordered list default of 40px */
+    padding-left: 0; /* Clears unordered list default of 40px */
 }
 
 .clear:after {

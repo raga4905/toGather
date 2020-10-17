@@ -24,7 +24,7 @@
 .card-img-top{
     transform:scale(1);
     transition: transform 0.5s ease;
-}
+} 
 
 .card-img-top{
     transform: scale(1.8);
@@ -36,12 +36,22 @@
     left: 0;
     width: 100%;
     height: 100%;
-    padding-top: 7px;
-    background-image: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    /* background-image: url('https://images.unsplash.com/photo-1490535004195-099bc723fa1f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1480&q=80'); */
     -o-transform: skewY(-30deg) rotate(60deg);
     -moz-transform: skewY(-30deg) rotate(60deg);
     -webkit-transform: skewY(-30deg) rotate(60deg);
     -ms-transform: skewY(-30deg) rotate(60deg);
     transform: skewY(-30deg) rotate(60deg);
     overflow: hidden;
+}
+
+@media only screen and (max-width:700px){
+    .hexagon{
+        font-size: .5rem;
+    }
+    .hexagon h2{
+        font-size: .8rem;
+    }
 }

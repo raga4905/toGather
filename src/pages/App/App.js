@@ -97,6 +97,7 @@ class App extends Component {
           user={this.state.user}
           handleLogout={this.handleLogout}
         />
+        
         <Switch>
           <Route exact path='/myevents' render={({ location }) =>
             <MyEventsPage
