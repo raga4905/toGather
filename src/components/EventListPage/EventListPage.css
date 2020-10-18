@@ -7,6 +7,12 @@
 } */
 
 
+.info{
+    height: 25rem;
+    padding-bottom: 1rem;
+}
+
+
 .logo{
     height: 200px;
 }

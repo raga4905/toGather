@@ -7,10 +7,10 @@ import EventDetailPage from "../EventDetailPage/EventDetailPage";
 Modal.setAppElement('#root')
 function EventListPage(props) {
     let events = props.user ?
-        <div>
+        <div className="hive">
             <>
                 <br />
-                <h1 className="text-center">Happening soon</h1>
+                <h1 className="text-center" style={{ color: 'white', textShadow: '2px 2px rgb(106, 103, 94)'}}>Happening soon</h1>
                 <br />
                 <ul id="grid" class="clear">
                     {props.events.map(event => (
@@ -29,10 +29,12 @@ function EventListPage(props) {
         // <div>
         //     <h1>hi</h1>
         // </div>
-        <div className="text-center">
-            <img class="logo" src="https://i.imgur.com/6HFvulI.png" alt="logo" />
-            <div >We know you're a busy bee! Sign up with ToGather to organize your events with ease. </div>
+        <div className="text-center" style={{ backgroundColor: 'white' }}>
+            <h1> Welcome to ToGather! </h1>
+            {/* <div >We know you're a busy bee! Sign up with ToGather to organize your events with ease. </div>
+            <img class="logo" src="https://i.imgur.com/6HFvulI.png" alt="logo" /> */}
             <br />
+            <img class="info" src="https://i.imgur.com/4gcAM7Z.png" alt="info"/>
         </div>
     return (
         <>

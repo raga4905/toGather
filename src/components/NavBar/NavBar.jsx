@@ -6,7 +6,10 @@ const NavBar = (props) => {
     let nav = props.user ?
     <div id="nav" className="navbar bg-white">
     <br/>
-            
+            <section>
+
+                <img src="https://i.imgur.com/4E4COcg.png" alt="logo-icon" class="icon"/>
+            </section>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <Link to='/' className='NavBar-link text-info' style={{ color: "green" }}>Explore</Link>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -23,8 +26,12 @@ const NavBar = (props) => {
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
         :
-        <div className="navbar">
+        <div className="navbar" style={{ backgroundColor: 'white' }}>
             <br/>
+            <section>
+
+                <img src="https://i.imgur.com/4E4COcg.png" alt="logo-icon" class="icon"/>
+            </section>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <Link to='/login' className='NavBar-link' style={{ color: "green" }}>LOG IN</Link>
             <Link to='/signup' className='NavBar-link' style={{ color: "green" }}>SIGN UP</Link>

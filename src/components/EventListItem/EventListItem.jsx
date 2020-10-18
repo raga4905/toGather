@@ -47,7 +47,6 @@ function EventListItem(props) {
         //     </div>
         // </div> className="text-center"
         <div class="hexagon" style={{backgroundImage:`url(${props.event.img})`}}>
-            {/* <img src="https://images.unsplash.com/photo-1486673748761-a8d18475c757?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="eventimg" className="card-img-top" /> */}
             <h2 className="text">{props.event.name}</h2>
             <p className="text">Hosted by: {props.event.user.name}</p>
             <p className="text">{props.event.date}</p>
@@ -67,7 +66,7 @@ function EventListItem(props) {
             }>
                 <EventDetailPage
                     event={props.event}
-                    event={props.event._id}
+                    // event={props.event._id}
                 />
                 <div className="text-center">
                     <button className="btn btn-outline-success " onClick={() => setModalIsOpen(false)}>Close</button>
