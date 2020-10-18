@@ -23,7 +23,12 @@ function EventListPage(props) {
                         </li>
                     ))}
                 </ul>
+                <footer class="footer">
+                    <div class="container">
 
+                        <h1 class="text-muted">ToGather @Rashel</h1>
+                    </div>
+                </footer>
             </>
         </div>
         :
