@@ -48,9 +48,9 @@ function EventListItem(props) {
         // </div> className="text-center"
         <div class="hexagon" style={{backgroundImage:`url(${props.event.img})`}}>
             {/* <img src="https://images.unsplash.com/photo-1486673748761-a8d18475c757?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="eventimg" className="card-img-top" /> */}
-            <h2 className="bg-white text-dark text-center">{props.event.name}</h2>
-            <p className="bg-white text-dark text-center">{props.event.user.name}</p>
-            <p className="bg-white text-dark text-center">{props.event.date}</p>
+            <h2 className="text">{props.event.name}</h2>
+            <p className="text">Hosted by: {props.event.user.name}</p>
+            <p className="text">{props.event.date}</p>
             <div className="text-center">
                 <button class="btn btn-warning" onClick={() => setModalIsOpen(true)}>Details</button>
             </div>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
+import './AddEventPage.css';
 
 class AddEventPage extends Component {
     state = {

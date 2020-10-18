@@ -7,26 +7,9 @@ import EventDetailPage from "../EventDetailPage/EventDetailPage";
 Modal.setAppElement('#root')
 function EventListPage(props) {
     let events = props.user ?
-        // <div>
-        //     <>
-        //         <br /><br />
-        //         <h1 className="text-center">Happening soon</h1>
-        //         <div className="container-fluid d-flex justify-content-center">
-        //             <div className="row">
-        //                 {props.events.map(event => (
-        //                     <EventListItem
-        //                         event={event}
-        //                         key={event._id}
-        //                         user={props.user}
-        //                     />
-        //                 ))}
-        //             </div>
-        //         </div>
-        //     </>
-        // </div>
         <div>
             <>
-                <br />
+                <br /><br />
                 <h1 className="text-center">Happening soon</h1>
                 <br />
                 <ul id="grid" class="clear">
@@ -44,9 +27,13 @@ function EventListPage(props) {
             </>
         </div>
         :
-        <div>
-            <div>Sign in! Look</div>
-
+        // <div>
+        //     <h1>hi</h1>
+        // </div>
+        <div className="text-center">
+            <img class="logo" src="https://i.imgur.com/6HFvulI.png" alt="logo" />
+            <div >We know you're a busy bee! Sign up with ToGather to organize your events with ease. </div>
+            <br />
         </div>
     return (
         <>

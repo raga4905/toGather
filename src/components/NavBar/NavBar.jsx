@@ -4,26 +4,30 @@ import './NavBar.css';
 
 const NavBar = (props) => {
     let nav = props.user ?
-        <div className="navbar bg-white">
+    <div id="nav" className="navbar bg-white">
+    <br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <Link to='/' className='NavBar-link text-info' >Explore</Link>
+            <Link to='/' className='NavBar-link text-info' style={{ color: "green" }}>Explore</Link>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <Link to='/add' className='NavBar-link text-info' >Add an Event</Link>
+            <Link to='/add' className='NavBar-link text-info' style={{ color: "green" }}>Add an Event</Link>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <Link to='/myevents' className='NavBar-link text-info'>My Events</Link>
+            <Link to='/myevents' className='NavBar-link text-info' style={{ color: "green" }}>My Events</Link>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              {/* <form className="SearchBar ">
                 <input type="text" placeholder="(You can't search yet)" />
             </form> */}
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <Link to='' onClick={props.handleLogout}><span className='NavBar-welcome text-dark'>WELCOME, <span class="font-weight-bold ">{props.user.name}</span>!</span>&nbsp;&nbsp;&nbsp;&nbsp;<span className='text-info'>LOG OUT</span></Link>
+            <Link to='' onClick={props.handleLogout} ><span className='NavBar-welcome text-dark'>WELCOME, <span class="font-weight-bold ">{props.user.name}</span>!</span>&nbsp;&nbsp;&nbsp;&nbsp;<span className='text-info'>LOG OUT</span></Link>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
         :
         <div className="navbar">
-            <Link to='/login' className='NavBar-link'>LOG IN</Link>
-            <Link to='/signup' className='NavBar-link'>SIGN UP</Link>
+            <br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <Link to='/login' className='NavBar-link' style={{ color: "green" }}>LOG IN</Link>
+            <Link to='/signup' className='NavBar-link' style={{ color: "green" }}>SIGN UP</Link>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>;
 
     return (

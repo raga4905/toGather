@@ -30,6 +30,16 @@
     transform: scale(1.8);
 } */
 
+body{
+    font-family: 'ABeeZee', sans-serif;
+}
+
+.text{
+    color: white;
+    text-align: center;
+    text-shadow: black;
+}
+
 #grid li .hexagon {
     position: absolute;
     top: 0;
