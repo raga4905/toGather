@@ -9,7 +9,7 @@ function EventListPage(props) {
     let events = props.user ?
         <div>
             <>
-                <br /><br />
+                <br />
                 <h1 className="text-center">Happening soon</h1>
                 <br />
                 <ul id="grid" class="clear">
@@ -17,18 +17,12 @@ function EventListPage(props) {
                         <li>
                             <EventListItem
                                 event={event}
-                                key={event._id}
+                                key={event.id}
                                 user={props.user}
                             />
                         </li>
                     ))}
                 </ul>
-                <footer class="footer">
-                    <div class="container">
-
-                        <h1 class="text-muted">ToGather @Rashel</h1>
-                    </div>
-                </footer>
             </>
         </div>
         :

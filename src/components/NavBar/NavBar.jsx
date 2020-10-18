@@ -6,6 +6,7 @@ const NavBar = (props) => {
     let nav = props.user ?
     <div id="nav" className="navbar bg-white">
     <br/>
+            
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <Link to='/' className='NavBar-link text-info' style={{ color: "green" }}>Explore</Link>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

@@ -92,7 +92,7 @@ class App extends Component {
   
   render() {
     return (
-      <div>
+      <>
         <NavBar
           user={this.state.user}
           handleLogout={this.handleLogout}
@@ -140,7 +140,7 @@ class App extends Component {
             } />            
           </Switch>
         </main>
-      </div>
+      </>
     );
   }
 }

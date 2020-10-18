@@ -11,6 +11,7 @@ function EventCard({ event }) {
                 </div>
                 <div className="card-body text-dark" >
                     <h2 className="card-title">What?<br />{event.name}</h2>
+                    <p>Hosting? {event.user.name}</p>
                     <p className="card-text text-secondary">When? <br /> {event.date}</p>
                     <p className="card-text text-secondary">Where? <br /> {event.location}</p>
                     <p className="card-text text-secondary">Why? <br />{event.description}</p>

@@ -67,9 +67,10 @@ function EventListItem(props) {
             }>
                 <EventDetailPage
                     event={props.event}
+                    event={props.event._id}
                 />
-                <div>
-                    <button className="btn btn-outline-success" onClick={() => setModalIsOpen(false)}>Close</button>
+                <div className="text-center">
+                    <button className="btn btn-outline-success " onClick={() => setModalIsOpen(false)}>Close</button>
                 </div>
             </Modal>
         </div>
