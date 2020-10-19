@@ -69,7 +69,7 @@ class EditEventPage extends Component {
                     </div>
                     <button
                         type="submit"
-                        className="btn btn-xs"
+                        className="btn btn-warning"
                         disabled={this.state.invalidForm}
                     >
                         SAVE Event

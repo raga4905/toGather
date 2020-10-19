@@ -1,15 +1,8 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
 import './EventListItem.css';
 import Modal from "react-modal";
 import EventDetailPage from "../EventDetailPage/EventDetailPage"
-// import { ThemeProvider } from 'react-bootstrap';
 
-// export default class EventListItem extends React.Component {
-//     render() {
-        
-//     }
-// }
 
 function EventListItem(props) {
     const [modalIsOpen, setModalIsOpen] = useState(false)
@@ -57,16 +50,17 @@ function EventListItem(props) {
             <Modal class="modal" isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} style={
                 {
                     overlay: {
-                        backgroundColor: 'grey'
+                        backgroundColor: 'rgba(255, 193, 8, .5)'
                     },
                     content: {
-                        color: "orange"
-                    }
+                        color: "orange",
+                        width: "600px",
+                        margin: "0 auto"
+                    }, 
                 }
             }>
                 <EventDetailPage
                     event={props.event}
-                    // event={props.event._id}
                 />
                 <div className="text-center">
                     <button className="btn btn-outline-success " onClick={() => setModalIsOpen(false)}>Close</button>

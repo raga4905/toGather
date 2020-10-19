@@ -31,10 +31,10 @@ class AddEventPage extends Component {
     render() {
         return (
             <div className="container">
-
+                <br />
                 <h1 className="text-center">Add Event</h1>
                 <form className="form-group text-center" ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit}>
-                    <div className="form-group ">
+                    <div className="form-group text-center">
                         <label className="text-center">Event Name (required)</label>
                         <input
                             className="form-control text-center"
@@ -47,7 +47,7 @@ class AddEventPage extends Component {
                     <div className="form-group  text-center">
                         <label>Description</label>
                         <input
-                            className="form-control"
+                            className="form-control text-center"
                             name="description"
                             value={this.state.formData.description}
                             onChange={this.handleChange}
@@ -57,7 +57,7 @@ class AddEventPage extends Component {
                     <div className="form-group">
                         <label >Image Link</label>
                         <input
-                            className="form-control"
+                            className="form-control text-center"
                             type="text"
                             name="img"
                             value={this.state.formData.img}
@@ -67,7 +67,7 @@ class AddEventPage extends Component {
                         <label>Event's Date</label>
                         <input
                             type="datetime-local"
-                            className="form-control"
+                            className="form-control text-center"
                             name="date"
                             value={this.state.formData.date}
                             onChange={this.handleChange}
@@ -76,7 +76,7 @@ class AddEventPage extends Component {
                     <div className="form-group">
                         <label>Location</label>
                         <input
-                            className="form-control"
+                            className="form-control text-center"
                             name="location"
                             value={this.state.formData.location}
                             onChange={this.handleChange}

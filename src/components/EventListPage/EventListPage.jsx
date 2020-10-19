@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./EventListPage.css";
 import EventListItem from "../EventListItem/EventListItem";
 import Modal from 'react-modal';
-import EventDetailPage from "../EventDetailPage/EventDetailPage";
 
 Modal.setAppElement('#root')
 function EventListPage(props) {
@@ -10,7 +9,7 @@ function EventListPage(props) {
         <div className="hive">
             <>
                 <br />
-                <h1 className="text-center" style={{ color: 'white', textShadow: '2px 2px rgb(106, 103, 94)'}}>Happening soon</h1>
+                <h1 className="text-center" style={{ color: 'white', textShadow: '2px 2px rgb(69, 67, 64)'}}>Happening soon</h1>
                 <br />
                 <ul id="grid" class="clear">
                     {props.events.map(event => (
@@ -26,13 +25,11 @@ function EventListPage(props) {
             </>
         </div>
         :
-        // <div>
-        //     <h1>hi</h1>
-        // </div>
         <div className="text-center" style={{ backgroundColor: 'white' }}>
+            <br/>
             <h1> Welcome to ToGather! </h1>
-            {/* <div >We know you're a busy bee! Sign up with ToGather to organize your events with ease. </div>
-            <img class="logo" src="https://i.imgur.com/6HFvulI.png" alt="logo" /> */}
+            <br/>
+            <p>We know you're a busy bee. Ease your event planning with ToGather!</p>
             <br />
             <img class="info" src="https://i.imgur.com/4gcAM7Z.png" alt="info"/>
         </div>
