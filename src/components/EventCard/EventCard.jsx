@@ -14,7 +14,7 @@ function EventCard({ event }) {
                     <p className="card-text text-secondary">When? <br /><Moment local format="MM/DD/YY - hh:mm a">{event.date}</Moment></p>
                     <p className="card-text text-secondary">Where? <br /> {event.location}</p>
                     <p className="card-text text-secondary">Why? <br />{event.description}</p>
-                    <button className="btn btn-outline-success">Sign Up </button>
+                    <button className="btn btn-outline-success"> Join </button>
                 &nbsp;&nbsp;
                 </div>
             </div>
