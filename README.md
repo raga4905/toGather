@@ -21,6 +21,12 @@ ____
 
 ____
 
+# Getting Started
+
+https://trello.com/b/in9PAIos/project-3
+
+____
+
 # TECHNOLOGY USED
 
 Express
