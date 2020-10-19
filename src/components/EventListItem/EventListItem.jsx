@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import './EventListItem.css';
 import Modal from "react-modal";
-import EventDetailPage from "../EventDetailPage/EventDetailPage"
-
+import EventDetailPage from "../EventDetailPage/EventDetailPage";
+import Moment from 'react-moment';
 
 function EventListItem(props) {
     const [modalIsOpen, setModalIsOpen] = useState(false)
@@ -42,7 +42,9 @@ function EventListItem(props) {
         <div class="hexagon" style={{backgroundImage:`url(${props.event.img})`}}>
             <h2 className="text">{props.event.name}</h2>
             <p className="text">Hosted by: {props.event.user.name}</p>
-            <p className="text">{props.event.date}</p>
+            <div className="text-center">
+            <Moment local format="MM/DD/YY - hh:mm a" className="text">{props.event.date}</Moment>
+            </div>
             <div className="text-center">
                 <button class="btn btn-warning" onClick={() => setModalIsOpen(true)}>Details</button>
             </div>
