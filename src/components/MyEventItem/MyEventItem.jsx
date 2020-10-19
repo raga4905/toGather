@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "./MyEventItem.css";
+import Moment from 'react-moment';
 
 
 function MyEventItem(props) {
@@ -13,7 +14,9 @@ function MyEventItem(props) {
                 <div className="card-body text-dark">
                     <h2 className="card-title">{props.myEvent.name}</h2>
                     <p className="card-text text-secondary">{props.myEvent.location}</p>
-                    <p className="card-text text-secondary">{props.myEvent.date}</p>
+                    <div className="text-center">
+                        <Moment local format="MM/DD/YY - hh:mm a">{props.myEvent.date}</Moment>
+                    </div>
                     <button className="btn btn-outline-warning" onClick={() => props.handleDeleteEvent(props.myEvent._id)}>
                         DELETE
                 </button> 
